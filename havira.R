@@ -25,5 +25,4 @@ ido <- seq(as.Date("1980-02-18"), as.Date("2023-12-31"), by="1 days")
 homcsap19892019.xts <- xts(cbind(ta = homTB,rr = csapTB),ido)
 plot(homcsap19892019.xts[,"rr"])
 hom.xts <- apply.monthly(homcsap19892019.xts["1989/2019","ta"], mean)
-csap.xts <- apply.monthly(homcsap19892019.xts["1989/2019","rr"], sum)
-
+csap.xts <- apply.monthly(homcsap19892019.xts["1989/2019","rr"], sum, na.rm = TRUE)
