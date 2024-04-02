@@ -11,3 +11,4 @@ for(honap in 1:12){
 }
 
 round(csapatlag,2)
+sum(csapatlag)
