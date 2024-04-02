@@ -20,11 +20,10 @@ csapTB <- as.numeric(TeljBotMat[,5])
 which(is.na(csapTB))
 TeljBotMat[which(is.na(csapTB)), 5]
 
-homcsap19892019=read.csv2("TeljesBotankert.csv")
 library(xts)
-ido <- seq(as.Date("1981-02-18"), as.Date("2023-07-31"), by="1 days")
-homcsap19892019.xts <- xts(homcsap19892019[,4:5],ido)
-plot(homcsap19892019.xts["1989/2019","atlag"])
+ido <- seq(as.Date("1980-02-18"), as.Date("2023-12-31"), by="1 days")
+homcsap19892019.xts <- xts(cbind(ta = homTB,rr = csapTB),ido)
+plot(homcsap19892019.xts[,"rr"])
 hom.xts <- apply.monthly(homcsap19892019.xts["1989/2019","ta"], mean)
 csap.xts <- apply.monthly(homcsap19892019.xts["1989/2019","rr"], sum)
 
