@@ -23,6 +23,7 @@ TeljBotMat[which(is.na(csapTB)), 5]
 library(xts)
 ido <- seq(as.Date("1980-02-18"), as.Date("2023-12-31"), by="1 days")
 homcsap19892019.xts <- xts(cbind(ta = homTB,rr = csapTB),ido)
-plot(homcsap19892019.xts[,"rr"])
+plot(homcsap19892019.xts["1989/2019","rr"])
 hom.xts <- apply.monthly(homcsap19892019.xts["1989/2019","ta"], mean)
 csap.xts <- apply.monthly(homcsap19892019.xts["1989/2019","rr"], sum, na.rm = TRUE)
+plot(csap.xts, type = "h")
