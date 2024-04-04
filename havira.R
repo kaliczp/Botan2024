@@ -6,10 +6,10 @@ plot(homcsap193060.xts["1930/1960","ta"])
 hom.xts <- apply.monthly(homcsap193060.xts["1930/1960","ta"], mean)
 csap.xts <- apply.monthly(homcsap193060.xts["1930/1960","rr"], sum)
 
-library(xlsx)
-read.xlsx("Teljes Botankert 1980-2023.xlsx", 1)
+## library(xlsx)
+## read.xlsx("Teljes Botankert 1980-2023.xlsx", 1)
 
-homcsap19892019=read.table("TeljesBotankert.csv", skip = 1, sep = ";", dec = ",")
+## homcsap19892019=read.table("TeljesBotankert.csv", skip = 1, sep = ";", dec = ",")
 
 TeljBot <- scan("TeljesBotankert.csv", what = character(), sep = ";")
 TeljBotMat <- matrix(TeljBot[-(1:5)], ncol = 5, byrow=TRUE )
