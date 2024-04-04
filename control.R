@@ -11,8 +11,11 @@ round(csapatlagcntr,2)
 sum(csapatlagcntr)
 
 idocntr <- seq(as.Date("2022-01-15"),as.Date("2022-12-15"), by = "month")
+idoori <- seq(as.Date("1980-01-15"),as.Date("1980-12-15"), by = "month")
 
-csapatlag.xts <- xts(csapatlag, idocntr)
+csapatlag.xts <- xts(csapatlag, idoori)
 csapatlagcntr.xts <- xts(csapatlagcntr, idocntr)
 
-csapatlag.xts - csapatlagcntr.xts
+par(mfrow=c(2,1))
+barplot(csapatlag.xts)
+barplot(csapatlagcntr.xts)
