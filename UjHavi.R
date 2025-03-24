@@ -12,3 +12,5 @@ MeanTempB <- apply.monthly(Botanxts[,3], colMeans)
 SumCsapB <- apply.monthly(Botanxts[,4], function(x){sum(x, na.rm = TRUE)})
 ## Glue data
 BotanMonth <- cbind(MinT = MinTempB, MaxT = MaxTempB, MeanT = MeanTempB, SumP = SumCsapB)
+## Export
+write.zoo(BotanMonth, "BotanMont.csv", sep = ";", dec = ",")
