@@ -10,3 +10,5 @@ MinTempB <- apply.monthly(Botanxts[,1], min)
 MaxTempB <- apply.monthly(Botanxts[,2], max)
 MeanTempB <- apply.monthly(Botanxts[,3], colMeans)
 SumCsapB <- apply.monthly(Botanxts[,4], sum)
+## Glue data
+BotanMonth <- cbind(MinT = MinTempB, MaxT = MaxTempB, MeanT = MeanTempB, SumP = SumCsapB)
